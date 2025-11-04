@@ -6,9 +6,6 @@ with open('part2.txt', 'r') as file:
     for instruction in instructions:
         direction = instruction[0]
         distance = int(instruction[1:])
-        if direction == 'R':
-            cur_name = (cur_name + distance) % len(names)
-        elif direction == 'L':
-            cur_name = (cur_name - distance) % len(names)
+        cur_name = (cur_name + (distance if direction == 'R' else -distance)) % len(names)
     print(names[cur_name])
 

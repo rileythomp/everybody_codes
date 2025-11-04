@@ -5,12 +5,7 @@ with open('part3.txt', 'r') as file:
     for instruction in instructions:
         direction = instruction[0]
         distance = int(instruction[1:])
-        top_name = 0
-        next_name = 0
-        if direction == 'R':
-            next_name = distance % len(names)
-        elif direction == 'L':
-            next_name = (len(names) - distance) % len(names)
-        names[top_name], names[next_name] = names[next_name], names[top_name]
+        next_name = distance % len(names) if direction == 'R' else (len(names) - distance) % len(names)
+        names[0], names[next_name] = names[next_name], names[0]
     print(names[0])
 
