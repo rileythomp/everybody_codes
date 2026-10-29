@@ -1,6 +1,6 @@
-mkdir quest$1
+mkdir $1
 
-cd quest$1
+cd $1
 
 touch 1.in 2.in 3.in
 
